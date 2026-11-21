@@ -1,54 +1,221 @@
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
+/* ===== HEADER ===== */
+.header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 50px 20px 40px;
     text-align: center;
-}
-h2{
-    text-align: center;
-}
-.nav{
-    background-color: antiquewhite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px 0;
-}
-.hero {
     position: relative;
-    height: 55vh;
-    min-height: 420px;
-    background-image: url("images/memory/nhacobinhthuy/nbt1.png");
+    overflow: hidden;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,165,0,0.08) 0%, transparent 60%),
+                radial-gradient(circle at 70% 50%, rgba(255,100,0,0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+.header-inner {
+    position: relative;
+    z-index: 1;
+}
+.header-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 12px;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+}
+.header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.header-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* ===== NAV ===== */
+.nav {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+/* ===== HERO SLIDESHOW ===== */
+.hero-slideshow {
+    position: relative;
+    height: 60vh;
+    min-height: 450px;
+    overflow: hidden;
+}
+.hero-slides {
+    position: absolute;
+    inset: 0;
+}
+.hero-slide {
+    position: absolute;
+    inset: 0;
     background-size: cover;
-    background-position: center 65%;
-    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+.hero-slide.active {
+    opacity: 1;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(0,0,0,0.15) 0%,
+        rgba(0,0,0,0.5) 60%,
+        rgba(0,0,0,0.75) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
+    padding: 20px;
+}
+.hero-content {
+    max-width: 700px;
+}
+.hero-eyebrow {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ffd700;
+    margin-bottom: 16px;
+}
+.hero-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+.hero-content h2 span {
+    color: #ffd700;
+    font-style: italic;
+}
+.hero-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.btn-hero {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255,107,53,0.4);
+}
+.btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255,107,53,0.5);
 }
 
-/* nền xám nhạt cho các section dưới hero */
-.about,
+/* ===== ABOUT ===== */
+.about {
+    background: #fff;
+    padding: 80px 20px;
+}
+.about-left .label-pill,
+.place-header .label-pill {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+.about-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1a1a2e;
+}
+.about-right p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+/* ===== GALLERY SECTION ===== */
 .why {
-    background: #e8e6e3;
-    color: #333;
+    background: #faf9f7;
+    padding-bottom: 80px;
 }
 
-/* khung nội dung hẹp, nằm giữa trang */
+.place-block {
+    padding: 60px 0 20px;
+}
+.place-block + .place-block {
+    border-top: 1px solid #eee;
+}
+.place-header {
+    margin-bottom: 10px;
+}
+.place-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+}
+.place-desc {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #1a1a2e;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 13px;
+}
+
+/* ===== CONTAINER ===== */
 .container {
-    width: 70%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 1100px;
     margin: 0 auto;
 }
-
-.about { padding: 70px 0 40px; }
-.why   { padding: 40px 0 70px; }
-
-/* chia 2 cột: trái - phải */
 .two-col {
     display: flex;
     justify-content: space-between;
@@ -57,21 +224,33 @@ h2{
 }
 .two-col > div { flex: 1; }
 
-.about h2,
-.why h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 40px;
-    font-weight: 400;
+/* ===== SCROLL ANIMATIONS ===== */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.scroll-animate-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.scroll-animate-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.sub {
-    font-size: 13px;
-    margin-top: 8px;
-}
-.sub.right { text-align: right; }
-
-.about p {
-    font-size: 13px;
-    line-height: 1.7;
-    margin-bottom: 24px;
+@media (max-width: 768px) {
+    .two-col {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .hero-slideshow {
+        height: 50vh;
+        min-height: 350px;
+    }
 }

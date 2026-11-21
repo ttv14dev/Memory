@@ -1,62 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khám phá Việt Nam</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
 </head>
-<script src="js/main.js"></script>
-<script src="js/tabs.js"></script>
 <body>
+
+    <!-- HEADER -->
     <header class="header">
-            <h2>Phá đảo du lịch Việt Nam</h2>
+        <div class="header-inner">
+            <span class="header-icon">🌏</span>
+            <h1>Khám Phá Việt Nam</h1>
+            <p class="header-sub">Hành trình lưu giữ những kỉ niệm đẹp</p>
+        </div>
     </header>
+
+    <!-- NAV TABS -->
     <nav class="nav">
-        <button type="button" class="tab-btn" data-tab="cantho">Cần Thơ</button>
-        <button type="button" class="tab-btn" data-tab="dalat">Đà Lạt</button>
-        <button type="button" class="tab-btn" data-tab="hue">Huế</button>
+        <button type="button" class="tab-btn active" data-tab="cantho">
+            <span class="tab-icon">🛶</span> Cần Thơ
+        </button>
+        <button type="button" class="tab-btn" data-tab="dalat">
+            <span class="tab-icon">🌸</span> Đà Lạt
+        </button>
+        <button type="button" class="tab-btn" data-tab="hue">
+            <span class="tab-icon">🏯</span> Huế
+        </button>
     </nav>
+
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Explore Viet Nam</h1>
-                <p>Your perfect Vacation Awaits</p>
-                <a href="cantho.html" class="ct">Explore More</a>
+
+    <!-- HERO SLIDESHOW -->
+    <section class="hero-slideshow">
+        <div class="hero-slides">
+            <div class="hero-slide active" style="background-image: url('images/cantho/cantho.png')"></div>
+            <!-- Thêm ảnh hero khác vào đây nếu có -->
+        </div>
+        <div class="hero-overlay">
+            <div class="hero-content scroll-animate">
+                <p class="hero-eyebrow">✈️ Hành trình 2026</p>
+                <h2>Phá Đảo Du Lịch<br><span>Việt Nam</span></h2>
+                <p class="hero-desc">Những khoảnh khắc đẹp nhất trên hành trình khám phá quê hương</p>
+                <a href="#gallery" class="btn-hero">Khám phá ngay ↓</a>
             </div>
-        </section>
-    </main>
-    <main>
-    
-    <!-- ABOUT US -->
-    <section class="about">
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about scroll-animate-section" id="about">
         <div class="container two-col">
-            <div>
-                <h2>Về chúng tôi</h2>
-                <p class="sub">Câu chuyện của chúng tôi</p>
+            <div class="about-left">
+                <p class="label-pill">🗺️ Về chúng tôi</p>
+                <h2>Câu chuyện<br>của chúng tôi</h2>
             </div>
-            <div>
+            <div class="about-right">
                 <p>Viết vài dòng giới thiệu về trang web của bạn ở đây. Ví dụ: đây là nơi giúp bạn khám phá những điểm đến đẹp nhất Việt Nam như Cần Thơ, Đà Lạt, Huế.</p>
-                <a href="#" class="btn-outline-dark">Xem thêm</a>
+                <a href="#gallery" class="btn-outline-dark">Xem bộ sưu tập →</a>
             </div>
         </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
-    <section class="why">
-        <div class="container two-col">
-            <h2>Vì sao chọn chúng tôi</h2>
+    <!-- GALLERY SECTION -->
+    <section class="why" id="gallery">
+
+        <!-- ĐỀN VUA HÙNG -->
+        <div class="place-block scroll-animate-section">
+            <div class="container">
+                <div class="place-header">
+                    <div>
+                        <p class="label-pill">📍 Cần Thơ</p>
+                        <h2>Đền Vua Hùng</h2>
+                        <p class="place-desc">Nơi tưởng nhớ các vua Hùng, mang đậm nét văn hóa lịch sử.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAROUSEL -->
+            <div class="carousel-wrapper" id="carousel-vua-hung">
+                <button class="carousel-btn prev" onclick="moveCarousel('carousel-vua-hung', -1)">&#8249;</button>
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="images/cantho/denvuahung/vh1.png" alt="Đền Vua Hùng 1" onclick="openLightbox(this)">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/cantho/denvuahung/vh2.png" alt="Đền Vua Hùng 2" onclick="openLightbox(this)">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/cantho/denvuahung/vh3.png" alt="Đền Vua Hùng 3" onclick="openLightbox(this)">
+                    </div>
+                    <!-- Thêm ảnh vào đây -->
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('carousel-vua-hung', 1)">&#8250;</button>
+                <div class="carousel-dots" id="dots-carousel-vua-hung"></div>
+            </div>
         </div>
 
-        <div class="container cards">
-            <img src="images/anh1.jpg" alt="Ảnh 1">
-            <img src="images/anh2.jpg" alt="Ảnh 2">
-            <img src="images/anh3.jpg" alt="Ảnh 3">
+        <!-- NHÀ CỔ BÍCH THỦY -->
+        <div class="place-block scroll-animate-section">
+            <div class="container">
+                <div class="place-header">
+                    <div>
+                        <p class="label-pill">📍 Cần Thơ</p>
+                        <h2>Nhà Cổ Bích Thủy</h2>
+                        <p class="place-desc">Ngôi nhà cổ hơn 100 năm tuổi, kiến trúc độc đáo giữa vùng sông nước.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-wrapper" id="carousel-bich-thuy">
+                <button class="carousel-btn prev" onclick="moveCarousel('carousel-bich-thuy', -1)">&#8249;</button>
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="images/cantho/nhacobichthuy/nbt1.png" alt="Nhà Cổ Bích Thủy 1" onclick="openLightbox(this)">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/cantho/nhacobichthuy/nbt2.png" alt="Nhà Cổ Bích Thủy 2" onclick="openLightbox(this)">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/cantho/nhacobichthuy/nbt3.png" alt="Nhà Cổ Bích Thủy 3" onclick="openLightbox(this)">
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('carousel-bich-thuy', 1)">&#8250;</button>
+                <div class="carousel-dots" id="dots-carousel-bich-thuy"></div>
+            </div>
         </div>
+
+        <!-- CHỢ NỔI CÁI RĂNG -->
+        <div class="place-block scroll-animate-section">
+            <div class="container">
+                <div class="place-header">
+                    <div>
+                        <p class="label-pill">📍 Cần Thơ</p>
+                        <h2>Chợ Nổi Cái Răng</h2>
+                        <p class="place-desc">Phiên chợ sông nước đặc trưng miền Tây, nhộn nhịp từ sáng sớm.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-wrapper" id="carousel-cai-rang">
+                <button class="carousel-btn prev" onclick="moveCarousel('carousel-cai-rang', -1)">&#8249;</button>
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="images/cantho/chonoicairang/cn1.png" alt="Chợ Nổi Cái Răng 1" onclick="openLightbox(this)">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/cantho/chonoicairang/cn2.png" alt="Chợ Nổi Cái Răng 2" onclick="openLightbox(this)">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/cantho/chonoicairang/cn3.png" alt="Chợ Nổi Cái Răng 3" onclick="openLightbox(this)">
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel('carousel-cai-rang', 1)">&#8250;</button>
+                <div class="carousel-dots" id="dots-carousel-cai-rang"></div>
+            </div>
+        </div>
+
     </section>
-</main>
 
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>🌏 Khám Phá Việt Nam · Lưu giữ kỉ niệm đẹp · 2026</p>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <button class="lightbox-prev" onclick="lightboxNav(-1, event)">&#8249;</button>
+        <img id="lightbox-img" src="" alt="">
+        <p id="lightbox-caption"></p>
+        <button class="lightbox-next" onclick="lightboxNav(1, event)">&#8250;</button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/tabs.js"></script>
 </body>
 </html>
