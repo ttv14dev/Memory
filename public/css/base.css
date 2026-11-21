@@ -1,15 +1,10 @@
-/* ===== BASE RESET ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-}
+/* ===== BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { width: 100%; overflow-x: hidden; }
 body {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    background: #faf9f7;
-    color: #2d2d2d;
+    font-family: 'DM Sans', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
 }
+img { display: block; max-width: 100%; }
