@@ -1,0 +1,77 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.nav{
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+.hero {
+    position: relative;
+    height: 55vh;
+    min-height: 420px;
+    background-image: url("images/memory/nhacobinhthuy/nbt1.png");
+    background-size: cover;
+    background-position: center 65%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+/* nền xám nhạt cho các section dưới hero */
+.about,
+.why {
+    background: #e8e6e3;
+    color: #333;
+}
+
+/* khung nội dung hẹp, nằm giữa trang */
+.container {
+    width: 70%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about { padding: 70px 0 40px; }
+.why   { padding: 40px 0 70px; }
+
+/* chia 2 cột: trái - phải */
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+.two-col > div { flex: 1; }
+
+.about h2,
+.why h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.sub {
+    font-size: 13px;
+    margin-top: 8px;
+}
+.sub.right { text-align: right; }
+
+.about p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
